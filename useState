@@ -1,0 +1,29 @@
+// 컴포넌트에서 동적인 값을 상태(state)라고 부른다
+// useState 함수를 사용하여 컴포넌트에서 상태를 관리 할 수 있다
+
+<Counter.js>
+import React, {useState} from 'react';
+
+function Counter() {
+    // useState 함수를 사용 할 때에는 상태의 기본값을 설정해 줄 수 있음 
+    const [number, setNumber] = useState(0);
+
+    const onIncrease = ()=>{
+        setNumber(number + 1);
+        console.log('+1')
+    }
+    const onDecrease = ()=>{
+        setNumber(number - 1);
+        console.log('-1')
+    }
+    return (
+        <div>
+            <h1>{number}</h1>
+            <button onClick={onIncrease}>+1</button>
+            <button onClick={onDecrease}>-1</button>
+        </div>
+    );
+}
+
+export default Counter;
+
